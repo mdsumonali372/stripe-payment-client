@@ -1,0 +1,7 @@
+.custom-card-element.StripeElement.StripeElement--empty {
+  background: white;
+  height: 45px;
+  padding: 13px 0px 0px 12px;
+  border-radius: 8px;
+  margin-top: 12px;
+}
