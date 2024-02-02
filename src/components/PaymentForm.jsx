@@ -16,7 +16,7 @@ const PaymentForm = ({ stripe }) => {
 
     const { token } = await stripe.createToken();
 
-    fetch("http//:localhost:5000/charge", {
+    fetch("https://stripe-server-side-gamma.vercel.app/charge", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
