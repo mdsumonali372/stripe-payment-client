@@ -16,16 +16,19 @@ const PaymentForm = ({ stripe }) => {
 
     const { token } = await stripe.createToken();
 
-    fetch("http://localhost:5000/charge", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        token: token.id,
-        amount: parseFloat(amount) * 100, // Convert amount to cents
-      }),
-    })
+    fetch(
+      "https://stripe-server-side-2jt0yipz6-mdsumonali372.vercel.app/charge",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          token: token.id,
+          amount: parseFloat(amount) * 100, // Convert amount to cents
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log("Server Response:", data);
